@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./App.css";
 import { AppContext } from "./components/AppContext/AppContext";
 
-export const App = () => {
+export const App: React.FC = () => {
   const { data } = useContext(AppContext);
 
   const images = data.map(({ image, name, id }) => (
