@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./App.css";
-import { AppContext } from "./components/AppContext/AppContext";
+import { IngredientSearch } from "./components/IngredientSearch/IngredientSearch";
+
+const PageStyles: React.CSSProperties = {
+  margin: "0 auto",
+  padding: "2rem",
+};
 
 export const App: React.FC = () => {
-  const { data } = useContext(AppContext);
-
-  const images = data.map(({ image, name, id }) => (
-    <img key={id} src={image} alt={name} />
-  ));
-
-  return <div className="App">{images}</div>;
+  return (
+    <div className="App" style={PageStyles}>
+      {<IngredientSearch />}
+    </div>
+  );
 };
